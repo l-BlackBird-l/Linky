@@ -46,6 +46,7 @@ namespace CryptoCurrency.ViewModel
 
                 var Navigation = Application.Current.MainWindow.DataContext as Navigation;
                 Navigation.OutputCoinInfo.Execute(topCoins[0]);
+                Navigation.coins = topCoins[0];
                 var mainWindow = Application.Current.MainWindow as MainWindow;
                 mainWindow.SetRadioButtonBasedOnCurrentVM(typeof(CoinsVM));
 

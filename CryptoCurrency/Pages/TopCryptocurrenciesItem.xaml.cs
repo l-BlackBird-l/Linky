@@ -26,15 +26,13 @@ namespace CryptoCurrency.Pages
         public TopCryptocurrenciesItem()
         {
             InitializeComponent();
-
-
-
         }
 
         private void CoinItemDown(object sender, MouseButtonEventArgs e)
         {
             var Navigation = Application.Current.MainWindow.DataContext as Navigation;
             Navigation.OutputCoinInfo.Execute(coins);
+            Navigation.coins = coins;
             var mainWindow = Application.Current.MainWindow as MainWindow;
             mainWindow.SetRadioButtonBasedOnCurrentVM(typeof(CoinsVM));
         }
