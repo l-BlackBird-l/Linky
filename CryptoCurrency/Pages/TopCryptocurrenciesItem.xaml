@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:CryptoCurrency.Pages"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="234" Margin="5">
-    <Grid Background="Transparent" Cursor="Hand">
+    <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="CoinItemDown">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="3*"/>

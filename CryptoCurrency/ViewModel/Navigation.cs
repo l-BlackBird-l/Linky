@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -13,6 +14,7 @@ namespace CryptoCurrency.ViewModel
 {
     class Navigation : ViewModelBase
     {
+        Coins coins  = new Coins();
         private object _currentView;
         public object CurrentView
         {
@@ -20,16 +22,20 @@ namespace CryptoCurrency.ViewModel
             set { _currentView = value; OnPropertyChanged(); }
         }
 
-        public ICommand CoinsCommand { get; set; }
-        public ICommand SearchCommand { get; set; }
-        public ICommand ConvertCommand { get; set; }
-        public ICommand FavoritesCommand { get; set; }
-        private void Coins(object obj) => CurrentView = new CoinsVM();
-        
+        public RelayCommand CoinsCommand { get; set; }
+        public RelayCommand SearchCommand { get; set; }
+        public RelayCommand ConvertCommand { get; set; }
+        public RelayCommand FavoritesCommand { get; set; }
+        public RelayCommand<Coins> OutputCoinInfo { get; set; }
+
+        private void Coins(object obj) => CurrentView = new CoinsVM(coins);
+
         private void Favorite(object obj) => CurrentView = new FavoriteVM();
+
         private void Convert(object obj) => CurrentView = new ConvertVM();
+
         private void Search(object obj) => CurrentView = new SearchVM();
-        
+
 
         public Navigation()
         {
@@ -37,9 +43,16 @@ namespace CryptoCurrency.ViewModel
             FavoritesCommand = new RelayCommand(Favorite);
             SearchCommand = new RelayCommand(Search);
             ConvertCommand = new RelayCommand(Convert);
-  
+            OutputCoinInfo = new RelayCommand<Coins>(coin => SetCoin(coin));
+
             // Startup Page
-            CurrentView = new CoinsVM();
+            CurrentView = new CoinsVM(coins);
+        }
+
+        private void SetCoin(Coins coin)
+        {
+            CoinsVM coinVM = new CoinsVM(coin);
+            CurrentView = coinVM;
         }
     }
 }

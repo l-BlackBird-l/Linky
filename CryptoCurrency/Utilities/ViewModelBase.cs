@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CryptoCurrency.Utilities
 {
-    class ViewModelBase : INotifyPropertyChanged
+   public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string propName = null)

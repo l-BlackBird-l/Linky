@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -24,6 +25,7 @@ namespace CryptoCurrency.ViewModel
         private async Task GetTopCoins()
         {
             CoinGeckoAPI coins = new CoinGeckoAPI();
+            
             var topCoins = await coins.GetTopCoins();
             if(topCoins  != null) {
                 foreach (var item in topCoins)
@@ -32,7 +34,7 @@ namespace CryptoCurrency.ViewModel
                     itemViewModel.CryptName.Content = FormatName(item.Name);
                     itemViewModel.CryptCost.Content =  FormatPrice(item.CurrentPrice);
                     itemViewModel.Crypt24h = FormatPricePersent(itemViewModel.Crypt24h, item.Price_change_percentage_24h);
-                   // itemViewModel.coins = item;
+                    itemViewModel.coins = item;
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
                     bitmap.UriSource = new Uri(item.Image);
@@ -41,6 +43,12 @@ namespace CryptoCurrency.ViewModel
                     itemViewModel.CryptImage.Source = bitmap;
                     CryptoItems.Add(itemViewModel);
                 }
+
+                var Navigation = Application.Current.MainWindow.DataContext as Navigation;
+                Navigation.OutputCoinInfo.Execute(topCoins[0]);
+                var mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow.SetRadioButtonBasedOnCurrentVM(typeof(CoinsVM));
+
             }
         }
 
@@ -61,9 +69,15 @@ namespace CryptoCurrency.ViewModel
 
         private string FormatName(string CryptName)
         {
-            int SecondSpaceIndex = CryptName.IndexOf(" ", 2);
+            string[] words = CryptName.Split(' ');
 
-            return CryptName.Substring(0, SecondSpaceIndex);
+            if (words.Length >= 2)
+            {
+                string result = string.Join(" ", words.Take(2));
+                return result;
+            }
+            else 
+                return CryptName;
         }
 
         private string FormatPrice(double price)
@@ -71,7 +85,7 @@ namespace CryptoCurrency.ViewModel
             if (price >= 1000)
             {
                 double formattedValue = price / 1000.0;
-                return "$" + formattedValue.ToString("0.0") + "к";
+                return "$" + formattedValue.ToString("0.0") + "k";
             }
             else
             {

@@ -25,9 +25,7 @@ namespace CryptoCurrency.Pages
         public TopCryptoCurrencies()
         {
             InitializeComponent();
-            DataContext = new TopCoinsVM();
         }
-
 
     }
 }

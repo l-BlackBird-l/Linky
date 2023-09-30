@@ -32,28 +32,28 @@
         <Separator Grid.ColumnSpan="3" VerticalAlignment="Bottom" Background="#141b2b" Margin="0,0,0,2" Height="1"/>
 
         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Vertical">
-            <Menu:Btn Style="{StaticResource BtnStyle}"  IsChecked="True" Command="{Binding CoinsCommand}">
+            <Menu:Btn x:Name="CoinButton" Style="{StaticResource BtnStyle}"  IsChecked="True" Command="{Binding CoinsCommand}">
                 <Grid>
                     <TextBlock Text="Coin" Style="{StaticResource Text_Style}" />
                     <Icon:PackIconMaterial Kind="Bitcoin"  Style="{StaticResource Icon_Style}"/>
                 </Grid>
             </Menu:Btn>
 
-            <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding SearchCommand}">
+            <Menu:Btn x:Name="SearchButton" Style="{StaticResource BtnStyle}" Command="{Binding SearchCommand}">
                 <Grid>
                     <TextBlock Text="Search" Style="{StaticResource Text_Style}" />
                     <Icon:PackIconMaterial Kind="ShieldSearch"  Style="{StaticResource Icon_Style}"/>
                 </Grid>
             </Menu:Btn>
 
-            <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding ConvertCommand}">
+            <Menu:Btn x:Name="ConvertButton" Style="{StaticResource BtnStyle}" Command="{Binding ConvertCommand}">
                 <Grid>
                     <TextBlock Text="Convert" Style="{StaticResource Text_Style}" />
                     <Icon:PackIconMaterial Kind="AccountConvert"  Style="{StaticResource Icon_Style}"/>
                 </Grid>
             </Menu:Btn>
 
-            <Menu:Btn Style="{StaticResource BtnStyle}" Command="{Binding FavoritesCommand}">
+            <Menu:Btn x:Name="FavoriteButton" Style="{StaticResource BtnStyle}" Command="{Binding FavoritesCommand}">
                 <Grid>
                     <TextBlock Text="Favorites" Style="{StaticResource Text_Style}" />
                     <Icon:PackIconMaterial Kind="Heart"  Style="{StaticResource Icon_Style}"/>

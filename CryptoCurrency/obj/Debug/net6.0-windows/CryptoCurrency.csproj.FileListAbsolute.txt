@@ -43,3 +43,5 @@ C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-window
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Favorite.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Search.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Styles\ScrollViewer.baml
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\bin\Debug\net6.0-windows\LiveCharts.dll
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll

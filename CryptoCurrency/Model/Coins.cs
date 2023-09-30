@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptoCurrency.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,9 @@ namespace CryptoCurrency
 
         [JsonPropertyName("name")]
         public string Name { get; set; }
+
+        [JsonPropertyName("official_forum_url")]
+        public string Official_forum_url { get; set; }
 
         [JsonPropertyName("current_price")]
         public double CurrentPrice { get; set; }
@@ -49,5 +53,7 @@ namespace CryptoCurrency
         
         [JsonPropertyName("market_cap_rank")]
         public int Market_cap_rank { get; set; }
+
+        public List<CoinHistory> Histories { get; set; }
     }
 }
