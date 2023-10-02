@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\App.xaml
-16-993950989
+17-467538265
 11553871766
-251438538648
+26330449386
 198-1834283786
-MainWindow.xaml;Pages\Coin.xaml;Pages\Convert.xaml;Pages\Favorite.xaml;Pages\Items\ConvertItem.xaml;Pages\Items\TopCryptocurrenciesItem.xaml;Pages\Search.xaml;Pages\TopCryptoCurrencies.xaml;Styles\Button.xaml;Styles\ComboBox.xaml;Styles\Icons.xaml;Styles\Page.xaml;Styles\ScrollViewer.xaml;Styles\TextBlock.xaml;Styles\TextBox.xaml;Utilities\DataTemplate.xaml;
+MainWindow.xaml;Pages\Coin.xaml;Pages\Convert.xaml;Pages\Favorite.xaml;Pages\Items\ConvertItem.xaml;Pages\Items\FavoriteItem.xaml;Pages\Items\TopCryptocurrenciesItem.xaml;Pages\Search.xaml;Pages\TopCryptoCurrencies.xaml;Styles\Button.xaml;Styles\ComboBox.xaml;Styles\Icons.xaml;Styles\Page.xaml;Styles\ScrollViewer.xaml;Styles\TextBlock.xaml;Styles\TextBox.xaml;Utilities\DataTemplate.xaml;
 
 False
 

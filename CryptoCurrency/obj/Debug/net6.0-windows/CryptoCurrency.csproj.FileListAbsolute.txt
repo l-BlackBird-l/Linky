@@ -50,3 +50,5 @@ C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-window
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\TopCryptocurrenciesItem.g.cs
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\ConvertItem.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\TopCryptocurrenciesItem.baml
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\FavoriteItem.g.cs
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\FavoriteItem.baml

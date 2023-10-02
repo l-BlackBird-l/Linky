@@ -4,10 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptoCurrency.Pages"
+             xmlns:uc="clr-namespace:CryptoCurrency.Pages"
              mc:Ignorable="d" 
+             xmlns:vm="clr-namespace:CryptoCurrency.ViewModel"
               d:DesignHeight="464" d:DesignWidth="628"
              Style="{StaticResource Page_Style}">
+    <UserControl.DataContext>
+        <vm:FavoriteVM/>
+    </UserControl.DataContext>
     <Grid>
-            
+        <ScrollViewer Grid.Row="1" Height="391">
+            <StackPanel x:Name="CryptoItems"  Orientation="Vertical" >
+                <ItemsControl ItemsSource="{Binding CryptoItems}">
+
+                </ItemsControl>
+            </StackPanel>
+        </ScrollViewer>
+
     </Grid>
 </UserControl>

@@ -13,6 +13,9 @@
     <Compile Update="Pages\Convert.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Items\FavoriteItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Items\ConvertItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Convert.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Items\FavoriteItem.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Items\ConvertItem.xaml">
