@@ -18,10 +18,10 @@ Linky - CryptoCurrency monitoring application, in C# WPF using MVMM, CoinGecko A
 ![Coin Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/LightCoinTab.png)
 2. Search Tab
 ![Search Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/DarkSearchTab.png)
-![Search Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/LightkSearchTab.png)
+![Search Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/LightSearchTab.png)
 4. Convert Tab
-![Search Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/DarkConvertTab.png)
-![Search Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/LightConvertTab.png)
+![Convert Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/DarkConvertTab.png)
+![Convert Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/LightConvertTab.png)
 5. Favorites Tab
 ![Favorites Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/DarkFavoritesTab.png)
 ![Favorites Tab](https://github.com/l-BlackBird-l/Linky/blob/main/Github%20Images/LightFavoritesTab.png)
