@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CryptoCurrency.Model;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Reflection.Metadata;
@@ -17,19 +19,18 @@ namespace CryptoCurrency
 
         public async Task<List<Coins>> GetTopCoins()
         {
-            List<Coins> data = await LoadTopCoins();
-            return data;
+            List<Coins> Coins = await LoadTopCoins();
+            return Coins;
         }
 
-        public async Task<Coins> GetBitcoinData()
+        public async Task<List<ConvertCoin>> GetCoinsForExchange()
         {
-            Coins data = await LoadBitcoinData();
-            return data;
+            List<ConvertCoin> Coins = await LoadCoinsForExchange();
+            return Coins;
         }
 
         private async Task<List<Coins>> LoadTopCoins() {
             List<Coins> data;
-
             using (HttpClient client = new HttpClient())
             {
                 try
@@ -43,7 +44,9 @@ namespace CryptoCurrency
                     if (response.IsSuccessStatusCode)
                     {
                         string content = await response.Content.ReadAsStringAsync();
+
                         data = JsonSerializer.Deserialize<List<Coins>>(content);
+                
                         return data;
                     }
                     else
@@ -62,10 +65,9 @@ namespace CryptoCurrency
             }
         }
 
-
-        private async Task<Coins> LoadBitcoinData()
+        private async Task<List<ConvertCoin>> LoadCoinsForExchange()
         {
-            Coins data = new Coins();
+            List<ConvertCoin> data;
             using (HttpClient client = new HttpClient())
             {
                 try
@@ -73,18 +75,19 @@ namespace CryptoCurrency
                     client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36");
                     client.DefaultRequestHeaders.Add("X-Requested-With", "XMLHttpRequest");
 
-                    string apiUrl = "https://api.coingecko.com/api/v3/coins/bitcoin?localization=false";
+                    string apiUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false&locale=en";
                     HttpResponseMessage response = await client.GetAsync(apiUrl);
 
                     if (response.IsSuccessStatusCode)
                     {
                         string content = await response.Content.ReadAsStringAsync();
-                        data = JsonSerializer.Deserialize<Coins>(content);
+
+                        data = JsonSerializer.Deserialize<List<ConvertCoin>>(content);
                         return data;
                     }
                     else
                     {
-                        MessageBox.Show(response.StatusCode.ToString());
+                        MessageBox.Show("Exchange: " + response.StatusCode.ToString());
                         data = null;
                         return data;
                     }
@@ -97,5 +100,6 @@ namespace CryptoCurrency
                 }
             }
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CryptoCurrency.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,48 @@ namespace CryptoCurrency.Pages
         public Convert()
         {
             InitializeComponent();
+        }
+
+        private void Convert_Click(object sender, RoutedEventArgs e)
+        {
+            if(FromCoinComboBox.SelectedIndex != -1 && ToCoinComboBox.SelectedIndex != -1 && !string.IsNullOrEmpty(Count.Text))
+            {
+                double count;
+                if (double.TryParse(Count.Text.Replace(',', '.'), out count))
+                {
+                    var from = (ConvertItem)FromCoinComboBox.SelectedItem;
+                    var to = (ConvertItem)ToCoinComboBox.SelectedItem;
+                    var result = ((from.price * count) / to.price);
+                    Result.Text = Math.Round(result, 10).ToString();
+                }
+                else
+                    Result.Text = string.Empty;
+            }
+        }
+
+        private void Change_Click(object sender, RoutedEventArgs e)
+        {
+            var tempItem = FromCoinComboBox.SelectedIndex;
+            FromCoinComboBox.SelectedIndex = ToCoinComboBox.SelectedIndex;
+            ToCoinComboBox.SelectedIndex = tempItem;
+        }
+
+        private void Validate_Input(object sender, TextCompositionEventArgs e)
+        {
+            if (!IsInputValid(e.Text))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private bool IsInputValid(string input)
+        {
+            string allowedCharacters = "0123456789.,";
+            foreach (char c in input)
+                if (!allowedCharacters.Contains(c))
+                    return false;
+
+            return true;
         }
     }
 }

@@ -1,10 +1,13 @@
 ﻿using CryptoCurrency.Model;
+using CryptoCurrency.Pages;
 using CryptoCurrency.Utilities;
 using LiveCharts;
 using LiveCharts.Wpf;
+using MahApps.Metro.IconPacks;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -15,16 +18,32 @@ using System.Windows.Media;
 
 namespace CryptoCurrency.ViewModel
 {
-    public class CoinsVM
+    public class CoinsVM : INotifyPropertyChanged
     {
+        private string _currentStarState;
+        public string currentStarState
+        {
+            get { return _currentStarState; }
+            set
+            {
+                if (_currentStarState != value)
+                {
+                    _currentStarState = value;
+                    OnPropertyChanged(nameof(currentStarState));
+                }
+            }
+        }
 
         public SeriesCollection Series { get; set; }
         public string[] LabelsX { get; set; }
         public Func<double, string> YFormatter { get; set; }
 
         public ICommand GoToWebSite { get; private set; }
+        public ICommand AddToFavorite { get; private set; }
+        public ICommand ChangeIconCommand { get; }
 
         private Coins _CoinInfo;
+
         public Coins CoinInfo
         {
             get { return _CoinInfo; }
@@ -42,7 +61,6 @@ namespace CryptoCurrency.ViewModel
         private SolidColorBrush _lowPersentColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#31d014"));
         private SolidColorBrush _highPersentColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#31d014"));
 
-
         public void GenerateChart()
         {
             if (CoinInfo.id != null)
@@ -58,15 +76,14 @@ namespace CryptoCurrency.ViewModel
                     GetOnlyPrice.Add(double.Parse(coin.priceUsd));
                     GetOnlyDate.Add(FormatDateForChart(coin.time));
                 }
-                Series = new SeriesCollection
-            {
-                new LineSeries
+
+                Series = new SeriesCollection { new LineSeries
                 {
                     Title = CoinInfo.Name,
                     Values = new ChartValues<double>(GetOnlyPrice),
                     Stroke = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#537afc"))
-        }
-            };
+                }};
+
                 LabelsX = GetOnlyDate.ToArray();
                 YFormatter = value => FormatPriceForChart(value);
             }
@@ -90,9 +107,22 @@ namespace CryptoCurrency.ViewModel
             _CoinInfo = new Coins();
             GetCoinsData(coinTask);
             GenerateChart();
-            GoToWebSite = new RelayCommand(GoToLink);
-        }
+            ChangeIcon();
 
+            GoToWebSite = new RelayCommand(GoToLinkButtom);
+            AddToFavorite = new RelayCommand(AddToFavoriteButtom);
+  
+        }
+        private void ChangeIcon()
+        {
+            if(CoinInfo.id != null)
+            {
+                if (Settings.Default.Favorites.Contains(CoinInfo.id))
+                    currentStarState = "Star";
+                else
+                    currentStarState = "StarPlusOutline";
+            }
+        }
 
         private string FormatPricePersent(double persent, char LowOrHigh)
         {
@@ -136,9 +166,24 @@ namespace CryptoCurrency.ViewModel
                 return "$" + price.ToString("0.0");
             }
         }
-        private void GoToLink(object parameter)
+        private void GoToLinkButtom(object parameter)
         {
             Process.Start(new ProcessStartInfo($"https://coinmarketcap.com/currencies/{CoinInfo.id}/") { UseShellExecute = true });
+        }
+
+        private void AddToFavoriteButtom(object parameter)
+        {
+            if (!Settings.Default.Favorites.Contains(CoinInfo.id))
+            {
+                Settings.Default.Favorites += $", {CoinInfo.id}";
+                Settings.Default.Save();
+            }
+            else
+            {
+                Settings.Default.Favorites = Settings.Default.Favorites.Replace($", {CoinInfo.id}", "");
+                Settings.Default.Save();
+            }
+            ChangeIcon();
         }
 
         private string FormatDateForChart(long Date)
@@ -158,7 +203,6 @@ namespace CryptoCurrency.ViewModel
                 id = Coin.id,
                 Image = Coin.Image,
                 Name = Coin.Name,
-                Official_forum_url = Coin.Official_forum_url,
                 CurrentPrice = Coin.CurrentPrice,
                 Price_change_percentage_24h = Coin.Price_change_percentage_24h,
                 High_24h = Coin.High_24h,
@@ -172,6 +216,12 @@ namespace CryptoCurrency.ViewModel
                 Market_cap_rank = Coin.Market_cap_rank,
             };
             CoinInfo = coinData;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
        

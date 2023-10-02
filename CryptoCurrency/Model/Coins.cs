@@ -18,9 +18,6 @@ namespace CryptoCurrency
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonPropertyName("official_forum_url")]
-        public string Official_forum_url { get; set; }
-
         [JsonPropertyName("current_price")]
         public double CurrentPrice { get; set; }
 

@@ -13,6 +13,9 @@
     <Compile Update="Pages\Convert.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Items\ConvertItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Favorite.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -22,7 +25,7 @@
     <Compile Update="Pages\TopCryptoCurrencies.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\TopCryptocurrenciesItem.xaml.cs">
+    <Compile Update="Pages\Items\TopCryptocurrenciesItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -36,6 +39,9 @@
     <Page Update="Pages\Convert.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Items\ConvertItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Favorite.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -45,10 +51,13 @@
     <Page Update="Pages\TopCryptoCurrencies.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\TopCryptocurrenciesItem.xaml">
+    <Page Update="Pages\Items\TopCryptocurrenciesItem.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Button.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ComboBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\Icons.xaml">
@@ -60,7 +69,10 @@
     <Page Update="Styles\ScrollViewer.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\Text.xaml">
+    <Page Update="Styles\TextBlock.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\TextBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Utilities\DataTemplate.xaml">

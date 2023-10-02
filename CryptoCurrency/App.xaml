@@ -8,9 +8,11 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/Page.xaml" />
                 <ResourceDictionary Source="Styles/Button.xaml" />
-                <ResourceDictionary Source="Styles/Text.xaml" />
+                <ResourceDictionary Source="Styles/TextBlock.xaml" />
                 <ResourceDictionary Source="Styles/Icons.xaml" />
                 <ResourceDictionary Source="Styles/ScrollViewer.xaml" />
+                <ResourceDictionary Source="Styles/TextBox.xaml" />
+                <ResourceDictionary Source="Styles/ComboBox.xaml" />
                 <ResourceDictionary Source="Utilities/DataTemplate.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

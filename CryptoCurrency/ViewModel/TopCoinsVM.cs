@@ -22,6 +22,16 @@ namespace CryptoCurrency.ViewModel
             CryptoItems = new ObservableCollection<TopCryptocurrenciesItem>();
             GetTopCoins();
         }
+
+        private BitmapSource GenerateImage(string uri)
+        {
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.BeginInit();
+            bitmap.UriSource = new Uri(uri);
+            bitmap.EndInit();
+
+            return bitmap;
+        }
         private async Task GetTopCoins()
         {
             CoinGeckoAPI coins = new CoinGeckoAPI();
@@ -31,16 +41,13 @@ namespace CryptoCurrency.ViewModel
                 foreach (var item in topCoins)
                 {
                     TopCryptocurrenciesItem itemViewModel = new TopCryptocurrenciesItem();
+
                     itemViewModel.CryptName.Content = FormatName(item.Name);
                     itemViewModel.CryptCost.Content =  FormatPrice(item.CurrentPrice);
                     itemViewModel.Crypt24h = FormatPricePersent(itemViewModel.Crypt24h, item.Price_change_percentage_24h);
                     itemViewModel.coins = item;
-                    BitmapImage bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(item.Image);
-                    bitmap.EndInit();
+                    itemViewModel.CryptImage.Source = GenerateImage(item.Image);
 
-                    itemViewModel.CryptImage.Source = bitmap;
                     CryptoItems.Add(itemViewModel);
                 }
 

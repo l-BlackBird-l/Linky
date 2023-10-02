@@ -22,8 +22,6 @@ C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-window
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\TopCryptoCurrencies.g.cs
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\TopCryptoCurrencies.baml
-C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\TopCryptocurrenciesItem.g.cs
-C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\TopCryptocurrenciesItem.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\MainWindow.g.cs
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\MainWindow.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Styles\Page.baml
@@ -34,7 +32,6 @@ C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\bin\Debug\net6.0-window
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.Material.dll
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\CryptoCurrency.csproj.AssemblyReference.cache
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\CryptoCurrency.csproj.CopyComplete
-C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Styles\Text.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Styles\Icons.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Convert.g.cs
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Favorite.g.cs
@@ -45,3 +42,11 @@ C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-window
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Styles\ScrollViewer.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\bin\Debug\net6.0-windows\LiveCharts.dll
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\bin\Debug\net6.0-windows\CryptoCurrency.dll.config
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Styles\ComboBox.baml
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Styles\TextBlock.baml
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Styles\TextBox.baml
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\ConvertItem.g.cs
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\TopCryptocurrenciesItem.g.cs
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\ConvertItem.baml
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\TopCryptocurrenciesItem.baml

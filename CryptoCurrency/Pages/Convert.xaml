@@ -4,10 +4,46 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptoCurrency.Pages"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
+             xmlns:vm="clr-namespace:CryptoCurrency.ViewModel"
              mc:Ignorable="d" 
               d:DesignHeight="464" d:DesignWidth="628"
              Style="{StaticResource Page_Style}">
+    <UserControl.DataContext>
+        <vm:ConvertVM/>
+    </UserControl.DataContext>
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="81*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#0d101d" CornerRadius="23"  Grid.Column="0" Margin="20,0,20,20" VerticalAlignment="Bottom" >
+            <StackPanel Orientation="Vertical">
+                <Label Content="Send:" Margin="20 10 20 10" Padding="0" FontSize="20" Foreground="White"/>
+                <ComboBox x:Name="FromCoinComboBox" Margin="20 10 20 10" FontSize="20"  ItemsSource="{Binding ConvertCoins}" Style="{StaticResource SelectorBox}" Height="40" Width="220"/>
+                <TextBox x:Name="Count" Margin="20 10 20 20" FontSize="20" Style="{StaticResource InputBox}" Width="220" PreviewTextInput="Validate_Input"/>
+            </StackPanel>
+        </Border>
+
+        <Button Style="{StaticResource topButton}" Margin="0,0,0,90" Background="#dcdcdc" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="Change_Click">
+            <Icon:PackIconMaterial Kind="SwapHorizontal" Width="20"/>
+        </Button>
+
+        <Border Background="#0d101d" CornerRadius="23"  Grid.Column="1"  Margin="20,0,20,20" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Vertical">
+                <Label Content="Receipt:" Margin="20 10 20 10" Padding="0" FontSize="20" Foreground="White" />
+                <ComboBox x:Name="ToCoinComboBox" Margin="20 10 20 10" FontSize="20"  ItemsSource="{Binding ConvertCoins}" Style="{StaticResource SelectorBox}" Height="40" Width="220"/>
+                <TextBox x:Name="Result" Margin="20 10 20 20" FontSize="20" IsReadOnly="True" Style="{StaticResource InputBox}" Width="220"/>
+            </StackPanel>
+        </Border>
+
+        <Border Background="#0d101d" CornerRadius="23"  Grid.ColumnSpan="2" Grid.Row="1" Margin="20 0 20 0">
+            <Button Content="Convert" Margin="40,0,40,0" VerticalAlignment="Center" Height="32" Click="Convert_Click" Style="{StaticResource submitButtom}"/>
+        </Border>
     </Grid>
 </UserControl>
