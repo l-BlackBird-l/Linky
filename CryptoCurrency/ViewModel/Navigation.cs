@@ -50,7 +50,7 @@ namespace CryptoCurrency.ViewModel
             CurrentView = new CoinsVM(coins);
         }
 
-        private void SetCoin(Coins coin)
+        public void SetCoin(Coins coin)
         {
             CoinsVM coinVM = new CoinsVM(coin);
             CurrentView = coinVM;

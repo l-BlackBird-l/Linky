@@ -4,10 +4,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptoCurrency.Pages"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
+             xmlns:vm="clr-namespace:CryptoCurrency.ViewModel"
              mc:Ignorable="d" 
               d:DesignHeight="464" d:DesignWidth="628"
              Style="{StaticResource Page_Style}">
-    <Grid>
-            
-    </Grid>
+    <UserControl.DataContext>
+        <vm:SearchVM/>
+    </UserControl.DataContext>
+    <Border Height="50"  Background="#0d101d" Margin="10 0 10 20" CornerRadius="23">
+        <Grid Background="Transparent" Cursor="Hand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="559*"/>
+                <ColumnDefinition Width="59*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="CryptoID" Style="{StaticResource InputBox}" Grid.Column="0" Width="500" Tag="Enter CryptoCurrency ID" Text="{Binding CryptID}"/>
+            <Button Style="{StaticResource topButton}" Margin="0 0 20 0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#dcdcdc" x:Name="ButtonMin" Cursor="Hand" Grid.Column="1" Width="50" Height="50" Command="{Binding SearchCommand}">
+                <Icon:PackIconMaterial Kind="SearchWeb" VerticalAlignment="Top" Width="25" Height="25"/>
+            </Button>
+        </Grid>
+    </Border>
 </UserControl>

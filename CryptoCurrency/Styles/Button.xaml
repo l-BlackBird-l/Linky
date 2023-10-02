@@ -128,6 +128,7 @@
 
     <Style x:Key="submitButtom" TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="#FFF5ECEB"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="Margin" Value="150 20 0 0"/>
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>

@@ -4,6 +4,7 @@
     <Style x:Key="InputBox" TargetType="{x:Type TextBox}">
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Padding" Value="5"/>
+        <Setter Property="FontSize" Value="18"/>
         <Setter Property="Cursor" Value="IBeam"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>

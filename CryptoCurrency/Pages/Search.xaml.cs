@@ -1,5 +1,7 @@
-﻿using System;
+﻿using CryptoCurrency.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,11 @@ namespace CryptoCurrency.Pages
         public Search()
         {
             InitializeComponent();
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
