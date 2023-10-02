@@ -9,7 +9,7 @@
     <Grid>
         <StackPanel Orientation="Horizontal">
             <Image x:Name="Image" Width="25"/>
-            <Label x:Name="CoinName" Content="Bitcoin" VerticalAlignment="Center" Margin="10 0 0 0" Foreground="White"/>
+            <Label x:Name="CoinName" Content="Bitcoin" VerticalAlignment="Center" Margin="10 0 0 0" Foreground="{DynamicResource Text}"/>
         </StackPanel>
     </Grid>
 </UserControl>

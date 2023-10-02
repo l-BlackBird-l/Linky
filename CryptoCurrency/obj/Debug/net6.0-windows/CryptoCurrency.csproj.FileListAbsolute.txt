@@ -52,3 +52,5 @@ C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-window
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\TopCryptocurrenciesItem.baml
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\FavoriteItem.g.cs
 C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Pages\Items\FavoriteItem.baml
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Theme\DarkTheme.baml
+C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\obj\Debug\net6.0-windows\Theme\LightTheme.baml

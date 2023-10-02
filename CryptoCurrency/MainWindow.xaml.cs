@@ -24,6 +24,17 @@ namespace CryptoCurrency
         public MainWindow()
         {
             InitializeComponent();
+
+            if (!Settings.Default.IsDarkMod)
+            {
+                ChangeTheme.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.WeatherSunny;
+                AppTheme.ChangeTheme(new Uri("Theme/LightTheme.xaml", UriKind.Relative));
+            }
+            else
+            {
+                ChangeTheme.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.WeatherNight;
+                AppTheme.ChangeTheme(new Uri("Theme/DarkTheme.xaml", UriKind.Relative));
+            }
         }
 
         private void DragWindow(object sender, MouseButtonEventArgs e)
@@ -59,6 +70,25 @@ namespace CryptoCurrency
             {
                 CoinButton.IsChecked = true;
             }
+        }
+
+        private void ChangeTheme_Click(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.IsDarkMod)
+            {
+                ChangeTheme.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.WeatherSunny;
+                AppTheme.ChangeTheme(new Uri("Theme/LightTheme.xaml", UriKind.Relative));
+                Settings.Default.IsDarkMod = false;
+                Settings.Default.Save();
+            }
+            else
+            {
+                ChangeTheme.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.WeatherNight;
+                AppTheme.ChangeTheme(new Uri("Theme/DarkTheme.xaml", UriKind.Relative));
+                Settings.Default.IsDarkMod = true;
+                Settings.Default.Save();
+            }
+              
         }
     }
 }

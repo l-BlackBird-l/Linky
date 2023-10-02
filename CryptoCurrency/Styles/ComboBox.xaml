@@ -31,7 +31,7 @@
 
     <Style x:Key="SelectorBox" TargetType="{x:Type ComboBox}">
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Foreground" Value="{DynamicResource Text}"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0 10 0 0"/>
         <Setter Property="Template">
@@ -43,8 +43,8 @@
                         <Label x:Name="Watermark" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="AliceBlue" Visibility="Collapsed" Padding="10 0 0 0" Content="{TemplateBinding Tag}" FontFamily="Roboto" FontSize="11"/>
                         <Popup x:Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
                             <Grid x:Name="DropDown"  SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                <Border x:Name="DropDownBorder" BorderThickness="1" BorderBrush="#5f84ff" Background="#0c111d"/>
-                                <ScrollViewer Margin="4 6 4 6" Foreground="#FF333333" VerticalScrollBarVisibility="Auto">
+                                <Border x:Name="DropDownBorder" BorderThickness="1" BorderBrush="#5f84ff" Background="{DynamicResource Card}"/>
+                                <ScrollViewer Margin="4 6 4 6" Foreground="{DynamicResource Card}" VerticalScrollBarVisibility="Auto">
                                     <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained">
                                     </StackPanel>
                                 </ScrollViewer>

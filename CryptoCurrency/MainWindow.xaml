@@ -25,38 +25,38 @@
             <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
 
-        <Border CornerRadius="25" Background="#090c17" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-        <Border Background="#0d101d" CornerRadius="25 0 0 25" Grid.RowSpan="3"/>
+        <Border CornerRadius="25" Background="{DynamicResource Backgrounds}" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+        <Border Background="{DynamicResource Card}" CornerRadius="25 0 0 25" Grid.RowSpan="3"/>
         <Image Grid.Column="0" Source="/ProgramLogo.png"  Width="35" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Height="36"/>
-        <Label Content="Linky" Foreground="White"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Margin="50,0,0,0"/>
-        <Separator Grid.ColumnSpan="3" VerticalAlignment="Bottom" Background="#141b2b" Margin="0,0,0,2" Height="1"/>
+        <Label Content="Linky" Foreground="{DynamicResource Text}"  HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Margin="50,0,0,0"/>
+        <Separator Grid.ColumnSpan="3" VerticalAlignment="Bottom" Background="{DynamicResource Separ}" Margin="0,0,0,2" Height="1"/>
 
         <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Vertical">
-            <Menu:Btn x:Name="CoinButton" Style="{StaticResource BtnStyle}"  IsChecked="True" Command="{Binding CoinsCommand}">
+            <Menu:Btn x:Name="CoinButton" Style="{StaticResource BtnStyle}"  IsChecked="True" Command="{Binding CoinsCommand}" >
                 <Grid>
-                    <TextBlock Text="Coin" Style="{StaticResource Text_Style}" />
-                    <Icon:PackIconMaterial Kind="Bitcoin"  Style="{StaticResource Icon_Style}"/>
+                    <TextBlock Text="Coin" Style="{StaticResource Text_Style}" Foreground="{DynamicResource Text}" />
+                    <Icon:PackIconMaterial Kind="Bitcoin"  Style="{StaticResource Icon_Style}" Foreground="{DynamicResource Text}"/>
                 </Grid>
             </Menu:Btn>
 
             <Menu:Btn x:Name="SearchButton" Style="{StaticResource BtnStyle}" Command="{Binding SearchCommand}">
                 <Grid>
-                    <TextBlock Text="Search" Style="{StaticResource Text_Style}" />
-                    <Icon:PackIconMaterial Kind="ShieldSearch"  Style="{StaticResource Icon_Style}"/>
+                    <TextBlock Text="Search" Style="{StaticResource Text_Style}" Foreground="{DynamicResource Text}"/>
+                    <Icon:PackIconMaterial Kind="ShieldSearch"  Style="{StaticResource Icon_Style}" Foreground="{DynamicResource Text}"/>
                 </Grid>
             </Menu:Btn>
 
             <Menu:Btn x:Name="ConvertButton" Style="{StaticResource BtnStyle}" Command="{Binding ConvertCommand}">
                 <Grid>
-                    <TextBlock Text="Convert" Style="{StaticResource Text_Style}" />
-                    <Icon:PackIconMaterial Kind="AccountConvert"  Style="{StaticResource Icon_Style}"/>
+                    <TextBlock Text="Convert" Style="{StaticResource Text_Style}" Foreground="{DynamicResource Text}"/>
+                    <Icon:PackIconMaterial Kind="AccountConvert"  Style="{StaticResource Icon_Style}" Foreground="{DynamicResource Text}"/>
                 </Grid>
             </Menu:Btn>
 
             <Menu:Btn x:Name="FavoriteButton" Style="{StaticResource BtnStyle}" Command="{Binding FavoritesCommand}">
                 <Grid>
-                    <TextBlock Text="Favorites" Style="{StaticResource Text_Style}" />
-                    <Icon:PackIconMaterial Kind="Heart"  Style="{StaticResource Icon_Style}"/>
+                    <TextBlock Text="Favorites" Style="{StaticResource Text_Style}" Foreground="{DynamicResource Text}"/>
+                    <Icon:PackIconMaterial Kind="Heart"  Style="{StaticResource Icon_Style}" Foreground="{DynamicResource Text}"/>
                 </Grid>
             </Menu:Btn>
         </StackPanel>
@@ -68,19 +68,29 @@
             <uc:TopCryptoCurrencies/>
         </Grid>
 
-        <Border CornerRadius="24" Grid.Row="0" Grid.Column="2"  Margin="100,10,10,10">
+        <Border CornerRadius="24" Grid.Row="0" Grid.Column="2"  Margin="0,10,10,10" HorizontalAlignment="Right">
             <Grid>
 
-                <Button Style="{StaticResource topButton}" Margin="0 0 0 0" Background="#dcdcdc" x:Name="ButtonClose" Click="AppExit" Cursor="Hand" >
-                    <Icon:PackIconMaterial Kind="Close" VerticalAlignment="Top" Width="13"/>
+                <Button Style="{StaticResource topButton}" Margin="0 0 0 0"  x:Name="ButtonClose" Click="AppExit" Cursor="Hand" >
+                    <Icon:PackIconMaterial Kind="Close" VerticalAlignment="Top" Width="13" />
                 </Button>
 
-                <Button Style="{StaticResource topButton}" Margin="0 0 35 0" Background="#dcdcdc" x:Name="ButtonMin" Cursor="Hand" Click="AppMinimize">
+                <Button Style="{StaticResource topButton}" Margin="0 0 35 0"  x:Name="ButtonMin" Cursor="Hand" Click="AppMinimize">
                     <Icon:PackIconMaterial Kind="CollapseAll" VerticalAlignment="Top" Width="13"/>
                 </Button>
             </Grid>
         </Border>
-        <Rectangle Grid.ColumnSpan="3" Grid.RowSpan="1" Fill="Transparent" Margin="140,0,80,20" Cursor="Hand" MouseLeftButtonDown="DragWindow"/>
+
+        <Border CornerRadius="24" Grid.Row="0" Grid.Column="2"  Margin="20,10,10,10" HorizontalAlignment="Left">
+            <Grid>
+
+                <Button Style="{StaticResource topButton}" Margin="0 0 0 0"  Cursor="Hand" Click="ChangeTheme_Click" >
+                    <Icon:PackIconMaterial Kind="WeatherNight" VerticalAlignment="Top" Width="13" x:Name="ChangeTheme"/>
+                </Button>
+            </Grid>
+        </Border>
+        
+        <Rectangle Grid.ColumnSpan="2" Grid.RowSpan="1" Fill="Transparent" Margin="140,0,0,20" Cursor="Hand" MouseLeftButtonDown="DragWindow"/>
     </Grid>
 
 </Window>

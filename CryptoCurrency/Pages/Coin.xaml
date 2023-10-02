@@ -26,20 +26,20 @@
 
         <!-- Top Panels-->
 
-        <Border Background="#0d101d" Margin="10 10 5 5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="23">
+        <Border Background="{DynamicResource Card}" Margin="10 10 5 5" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="23">
             <StackPanel Orientation="Horizontal">
                 <Image Source="{Binding CoinInfo.Image}" Width="40" Margin="20 0 0 0"/>
-                <Label Content="{Binding CoinInfo.Name}" FontSize="25" Foreground="White" Margin="20 0 0 0" VerticalAlignment="Center"/>
+                <Label Content="{Binding CoinInfo.Name}" FontSize="25" Foreground="{DynamicResource Text}" Margin="20 0 0 0" VerticalAlignment="Center"/>
             </StackPanel>
         </Border>
 
-        <Border Background="#0d101d" Grid.Row="0"  Grid.Column="2" CornerRadius="23" Margin="5 10 5 5" >
+        <Border Background="{DynamicResource Card}" Grid.Row="0"  Grid.Column="2" CornerRadius="23" Margin="5 10 5 5" >
             <Button Style="{StaticResource topButton}" Margin="0 0 0 0" Background="#dcdcdc" Cursor="Hand" Height="35" Width="35" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding GoToWebSite}">
                 <Icon:PackIconMaterial Kind="web" Height="25" Width="25" />
             </Button>
         </Border>
 
-        <Border Background="#0d101d" Grid.Row="0"  Grid.Column="3"  CornerRadius="23" Margin="5 10 10 5">
+        <Border Background="{DynamicResource Card}" Grid.Row="0"  Grid.Column="3"  CornerRadius="23" Margin="5 10 10 5">
             <Button Style="{StaticResource topButton}" Margin="0 0 0 0" Background="#dcdcdc" Cursor="Hand" Height="35" Width="35" Command="{Binding AddToFavorite}" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Icon:PackIconMaterial Kind="{Binding currentStarState}" Height="25" Width="25"/>
             </Button>
@@ -48,15 +48,15 @@
 
 
         <!-- Middle Panel-->
-        <Border Background="#0d101d" Margin="10,5,10,5" Grid.Row="1" Grid.ColumnSpan="4"  Grid.Column="0" CornerRadius="25">
+        <Border Background="{DynamicResource Card}" Margin="10,5,10,5" Grid.Row="1" Grid.ColumnSpan="4"  Grid.Column="0" CornerRadius="25">
             <lvc:CartesianChart Background="Transparent" LegendLocation="None" Series="{Binding Series}">
                 <lvc:CartesianChart.AxisY>
-                    <lvc:Axis LabelFormatter="{Binding YFormatter}">
+                    <lvc:Axis LabelFormatter="{Binding YFormatter}" Foreground="{DynamicResource Text}">
                     </lvc:Axis>
                 </lvc:CartesianChart.AxisY>
 
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Labels="{Binding LabelsX}">
+                    <lvc:Axis Labels="{Binding LabelsX}" Foreground="{DynamicResource Text}">
                         <lvc:Axis.Separator>
                             <lvc:Separator StrokeThickness="0" Step="3"/>
                         </lvc:Axis.Separator>
@@ -68,26 +68,26 @@
 
 
         <!-- Buttom Panels-->
-        <Border Background="#0d101d" Margin="10,5,5,5" CornerRadius="25" Grid.Row="2" Grid.Column="0"  >
-            <Label Content="{Binding CurrentPriceInDollars}" FontSize="18" Foreground="White" Margin="20 0 0 0" VerticalAlignment="Center"/>
+        <Border Background="{DynamicResource Card}" Margin="10,5,5,5" CornerRadius="25" Grid.Row="2" Grid.Column="0"  >
+            <Label Content="{Binding CurrentPriceInDollars}" FontSize="18" Foreground="{DynamicResource Text}" Margin="20 0 0 0" VerticalAlignment="Center"/>
         </Border>
-        <Border Background="#0d101d" Margin="10,5,5,10" CornerRadius="25" Grid.Row="3" Grid.Column="0">
-            <Label Content="{Binding HighLow24h}" FontSize="18" Foreground="White" Margin="20 0 20 0" VerticalAlignment="Center"/>
+        <Border Background="{DynamicResource Card}" Margin="10,5,5,10" CornerRadius="25" Grid.Row="3" Grid.Column="0">
+            <Label Content="{Binding HighLow24h}" FontSize="18" Foreground="{DynamicResource Text}" Margin="20 0 20 0" VerticalAlignment="Center"/>
         </Border>
 
-        <Border Background="#0d101d" Margin="5,5,10,10" CornerRadius="25" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
+        <Border Background="{DynamicResource Card}" Margin="5,5,10,10" CornerRadius="25" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
             <Grid>
-                <Label Content="All Time Low" FontSize="18" Foreground="White" Margin="20 5 0 0" VerticalAlignment="Top" Padding="0"/>
-                <Label Content="{Binding AllTimeLowData}" FontSize="15" Foreground="White" Margin="20 0 0 5" VerticalAlignment="Bottom" Padding="0"/>
-                <Label Content="{Binding AllTimeLow}" FontSize="18" Foreground="White" Margin="20 5 20 0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="0"/>
+                <Label Content="All Time Low" FontSize="18" Foreground="{DynamicResource Text}" Margin="20 5 0 0" VerticalAlignment="Top" Padding="0"/>
+                <Label Content="{Binding AllTimeLowData}" FontSize="15" Foreground="{DynamicResource Text}" Margin="20 0 0 5" VerticalAlignment="Bottom" Padding="0"/>
+                <Label Content="{Binding AllTimeLow}" FontSize="18" Foreground="{DynamicResource Text}" Margin="20 5 20 0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="0"/>
                 <Label Content="{Binding AllTimeLowPersent}" FontSize="15" Margin="20 0 20 5" Foreground="{Binding LowPersentColor}"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0"/>
             </Grid>
         </Border>
-        <Border Background="#0d101d" Margin="5,5,10,5" CornerRadius="25" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+        <Border Background="{DynamicResource Card}" Margin="5,5,10,5" CornerRadius="25" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
             <Grid>
-                <Label Content="All Time High" FontSize="18" Foreground="White" Margin="20 5 0 0" VerticalAlignment="Top" Padding="0"/>
-                <Label Content="{Binding AllTimeHighData}" FontSize="15" Foreground="White" Margin="20 0 0 5" VerticalAlignment="Bottom" Padding="0"/>
-                <Label Content="{Binding AllTimeHigh}" FontSize="18" Foreground="White" Margin="20 5 20 0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="0"/>
+                <Label Content="All Time High" FontSize="18" Foreground="{DynamicResource Text}" Margin="20 5 0 0" VerticalAlignment="Top" Padding="0"/>
+                <Label Content="{Binding AllTimeHighData}" FontSize="15" Foreground="{DynamicResource Text}" Margin="20 0 0 5" VerticalAlignment="Bottom" Padding="0"/>
+                <Label Content="{Binding AllTimeHigh}" FontSize="18" Foreground="{DynamicResource Text}" Margin="20 5 20 0" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="0"/>
                 <Label Content="{Binding AllTimeHighPersent}" FontSize="15" Foreground="{Binding HighPersentColor}" Margin="20 0 20 5" VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0"/>
             </Grid>
 

@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style x:Key="InputBox" TargetType="{x:Type TextBox}">
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="{DynamicResource Text}"/>
         <Setter Property="Padding" Value="5"/>
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Cursor" Value="IBeam"/>

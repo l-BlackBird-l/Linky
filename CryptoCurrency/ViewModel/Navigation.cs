@@ -14,6 +14,7 @@ namespace CryptoCurrency.ViewModel
 {
     class Navigation : ViewModelBase
     {
+
         public Coins coins  = new Coins();
 
         private object _currentView;

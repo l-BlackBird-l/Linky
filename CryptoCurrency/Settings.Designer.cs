@@ -37,13 +37,13 @@ namespace CryptoCurrency {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Theme {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsDarkMod {
             get {
-                return ((string)(this["Theme"]));
+                return ((bool)(this["IsDarkMod"]));
             }
             set {
-                this["Theme"] = value;
+                this["IsDarkMod"] = value;
             }
         }
         

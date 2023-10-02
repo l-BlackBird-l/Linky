@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptoCurrency.Pages"
              mc:Ignorable="d">
-    <Border Height="50"  Background="#0d101d" Margin="10 0 0 20" CornerRadius="23" MouseLeftButtonDown="CoinItemDown">
+    <Border Height="50"  Background="{DynamicResource Card}" Margin="10 0 0 20" CornerRadius="23" MouseLeftButtonDown="CoinItemDown">
         <Grid Background="Transparent" Cursor="Hand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="5*"/>
@@ -17,11 +17,11 @@
                 <ColumnDefinition Width="12*"/>
             </Grid.ColumnDefinitions>
             <Image x:Name="CryptImage" Source="/ProgramLogo.png" Grid.Column="0" Grid.RowSpan="2" Margin="5"/>
-            <Label x:Name="CryptName"  Content="Bitcoin" Grid.Column="1" Padding="0" VerticalAlignment="Center" Foreground="White" FontSize="16"/>
+            <Label x:Name="CryptName"  Content="Bitcoin" Grid.Column="1" Padding="0" VerticalAlignment="Center" Foreground="{DynamicResource Text}" FontSize="16"/>
 
-            <Label x:Name="CryptCost" Content="$34.56" Grid.Column="2" Padding="0" VerticalAlignment="Center"  Foreground="White" FontSize="16"/>
+            <Label x:Name="CryptCost" Content="$34.56" Grid.Column="2" Padding="0" VerticalAlignment="Center"  Foreground="{DynamicResource Text}" FontSize="16"/>
 
-            <Label x:Name="Crypt24h" Content="+1.2%" Grid.Column="1" Grid.Row="1"  Padding="0" VerticalAlignment="Bottom" Margin="0 0 0 5" FontSize="12" Foreground="White"/>
+            <Label x:Name="Crypt24h" Content="+1.2%" Grid.Column="1" Grid.Row="1"  Padding="0" VerticalAlignment="Bottom" Margin="0 0 0 5" FontSize="12" Foreground="{DynamicResource Text}"/>
 
         </Grid>
     </Border>

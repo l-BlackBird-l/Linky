@@ -35,21 +35,24 @@ namespace CryptoCurrency.ViewModel
 
         private async Task GetFovorites(string Favorites)
         {
-            CoinGeckoAPI coins = new CoinGeckoAPI();
-
-            var topCoins = await coins.GetFavoritesCoins(Favorites);
-            if (topCoins != null)
+            if (!string.IsNullOrEmpty(Favorites))
             {
-                foreach (var item in topCoins)
-                {
-                    FavoriteItem itemViewModel = new FavoriteItem();
+                CoinGeckoAPI coins = new CoinGeckoAPI();
 
-                    itemViewModel.CryptName.Content = FormatName(item.Name);
-                    itemViewModel.CryptCost.Content = FormatPrice(item.CurrentPrice);
-                    itemViewModel.Crypt24h = FormatPricePersent(itemViewModel.Crypt24h, item.Price_change_percentage_24h);
-                    itemViewModel.CryptImage.Source = GenerateImage(item.Image);
-                    itemViewModel.coins = item ;
-                    CryptoItems.Add(itemViewModel);
+                var topCoins = await coins.GetFavoritesCoins(Favorites);
+                if (topCoins != null)
+                {
+                    foreach (var item in topCoins)
+                    {
+                        FavoriteItem itemViewModel = new FavoriteItem();
+
+                        itemViewModel.CryptName.Content = FormatName(item.Name);
+                        itemViewModel.CryptCost.Content = FormatPrice(item.CurrentPrice);
+                        itemViewModel.Crypt24h = FormatPricePersent(itemViewModel.Crypt24h, item.Price_change_percentage_24h);
+                        itemViewModel.CryptImage.Source = GenerateImage(item.Image);
+                        itemViewModel.coins = item;
+                        CryptoItems.Add(itemViewModel);
+                    }
                 }
             }
         }

@@ -12,7 +12,7 @@
     <UserControl.DataContext>
         <vm:SearchVM/>
     </UserControl.DataContext>
-    <Border Height="50"  Background="#0d101d" Margin="10 0 10 20" CornerRadius="23">
+    <Border Height="50"  Background="{DynamicResource Card}" Margin="10 0 10 20" CornerRadius="23">
         <Grid Background="Transparent" Cursor="Hand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="559*"/>
