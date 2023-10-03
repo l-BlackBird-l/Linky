@@ -1,5 +1,5 @@
 # Linky
-Linky - CryptoCurrency monitoring application, in C# WPF using MVMM, CoinGecko API and CoinCap API.
+Linky - CryptoCurrency monitoring application, in C# WPF using MVVM, CoinGecko API and CoinCap API.
 # Key Features:
 1. Top 10 Coins
 - Output via CoinGecko API
