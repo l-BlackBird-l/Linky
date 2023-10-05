@@ -34,7 +34,17 @@ namespace CryptoCurrency.ViewModel
             }
         }
 
-        public SeriesCollection Series { get; set; }
+        private SeriesCollection _series;
+        public SeriesCollection Series
+        {
+            get { return _series; }
+            set
+            {
+                _series = value;
+                OnPropertyChanged("Series");
+            }
+        }
+
         public string[] LabelsX { get; set; }
         public Func<double, string> YFormatter { get; set; }
 
@@ -61,12 +71,12 @@ namespace CryptoCurrency.ViewModel
         private SolidColorBrush _lowPersentColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#31d014"));
         private SolidColorBrush _highPersentColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#31d014"));
 
-        public void GenerateChart()
+        public async Task GenerateChart()
         {
             if (CoinInfo.id != null)
             {
                 CoinCapAPI coinCap = new CoinCapAPI();
-                List<CoinHistory> coins = coinCap.GetCoinHistories(CoinInfo.id);
+                List<CoinHistory> coins = await coinCap.GetCoinHistories(CoinInfo.id);
 
                 List<double> GetOnlyPrice = new List<double>();
                 List<string> GetOnlyDate = new List<string>();

@@ -15,11 +15,11 @@ namespace CryptoCurrency.ViewModel
 {
     class TopCoinsVM
     {
-        public ObservableCollection<TopCryptocurrenciesItem> CryptoItems { get; set; }
+        public ObservableCollection<TopCryptocurrenciesVM> CryptoItems { get; set; }
 
         public TopCoinsVM()
         {
-            CryptoItems = new ObservableCollection<TopCryptocurrenciesItem>();
+            CryptoItems = new ObservableCollection<TopCryptocurrenciesVM>();
             GetTopCoins();
         }
 
@@ -40,13 +40,14 @@ namespace CryptoCurrency.ViewModel
             if(topCoins  != null) {
                 foreach (var item in topCoins)
                 {
-                    TopCryptocurrenciesItem itemViewModel = new TopCryptocurrenciesItem();
+                    TopCryptocurrenciesVM itemViewModel = new TopCryptocurrenciesVM();
 
-                    itemViewModel.CryptName.Content = FormatName(item.Name);
-                    itemViewModel.CryptCost.Content =  FormatPrice(item.CurrentPrice);
-                    itemViewModel.Crypt24h = FormatPricePersent(itemViewModel.Crypt24h, item.Price_change_percentage_24h);
-                    itemViewModel.coins = item;
-                    itemViewModel.CryptImage.Source = GenerateImage(item.Image);
+                    itemViewModel.CryptName = FormatName(item.Name);
+                    itemViewModel.CryptCost =  FormatPrice(item.CurrentPrice);
+                    itemViewModel.Crypt24h = FormatPricePersent(item.Price_change_percentage_24h);
+                    itemViewModel.LabelColor = SetPersentColor(item.Price_change_percentage_24h);
+                    itemViewModel.Coins = item;
+                    itemViewModel.CryptImage = GenerateImage(item.Image);
 
                     CryptoItems.Add(itemViewModel);
                 }
@@ -60,17 +61,33 @@ namespace CryptoCurrency.ViewModel
             }
         }
 
-        private System.Windows.Controls.Label FormatPricePersent(System.Windows.Controls.Label label, double persent)
+
+        private Brush SetPersentColor(double persent)
         {
+            Brush label;
             if (persent > 0)
             {
-                label.Content = "▲ " + Math.Round(persent, 2) + "%";
-                label.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#31d014"));
+                label = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#31d014"));
             }
             else
             {
-                label.Content = "▼ " + Math.Round(persent, 1) + "%";
-                label.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fc2009"));
+                label = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fc2009"));
+            }
+            return label;
+        }
+
+        private string FormatPricePersent(double persent)
+        {
+            string label;
+            if (persent > 0)
+            {
+                label = "▲ " + Math.Round(persent, 2) + "%";
+               // label.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#31d014"));
+            }
+            else
+            {
+                label = "▼ " + Math.Round(persent, 1) + "%";
+                //label.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fc2009"));
             }
             return label;
         }

@@ -16,5 +16,5 @@ C:\Users\User\source\repos\CryptoCurrency\CryptoCurrency\App.xaml
 198-1834283786
 MainWindow.xaml;Pages\Coin.xaml;Pages\Convert.xaml;Pages\Favorite.xaml;Pages\Items\ConvertItem.xaml;Pages\Items\FavoriteItem.xaml;Pages\Items\TopCryptocurrenciesItem.xaml;Pages\Search.xaml;Pages\TopCryptoCurrencies.xaml;Styles\Button.xaml;Styles\ComboBox.xaml;Styles\Icons.xaml;Styles\Page.xaml;Styles\ScrollViewer.xaml;Styles\TextBlock.xaml;Styles\TextBox.xaml;Theme\DarkTheme.xaml;Theme\LightTheme.xaml;Utilities\DataTemplate.xaml;
 
-True
+False
 

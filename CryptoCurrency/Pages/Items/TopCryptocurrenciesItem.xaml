@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CryptoCurrency.Pages"
+             xmlns:vm="clr-namespace:CryptoCurrency.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="234" Margin="5">
-    <Grid Background="Transparent" Cursor="Hand" MouseLeftButtonDown="CoinItemDown">
+    <UserControl.DataContext>
+        <vm:TopCryptocurrenciesVM/>
+    </UserControl.DataContext>
+    <Grid Background="Transparent" Cursor="Hand" >
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="3*"/>
@@ -16,12 +20,12 @@
             <ColumnDefinition Width="62*"/>
             <ColumnDefinition Width="26*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="CryptImage" Source="/ProgramLogo.png" Grid.Column="0" Grid.RowSpan="2" Margin="5"/>
-        <Label x:Name="CryptName"  Content="Bitcoin" Grid.Column="1" Padding="0" VerticalAlignment="Center" Foreground="{DynamicResource Text}" FontSize="16"/>
+        <Image x:Name="CryptImage"  Grid.Column="0" Grid.RowSpan="2" Margin="5"/>
+        <Label x:Name="CryptName"  Grid.Column="1" Padding="0" VerticalAlignment="Center" Foreground="{DynamicResource Text}" FontSize="16"/>
 
-        <Label x:Name="CryptCost" Content="$34.56" Grid.Column="2" Padding="0" VerticalAlignment="Center"  Foreground="{DynamicResource Text}" FontSize="16"/>
+        <Label x:Name="CryptCost"  Grid.Column="2" Padding="0" VerticalAlignment="Center"  Foreground="{DynamicResource Text}" FontSize="16"/>
 
-        <Label x:Name="Crypt24h" Content="+1.2%" Grid.Column="1" Grid.Row="1"  Padding="0" VerticalAlignment="Bottom" Margin="0 0 0 5" FontSize="12" Foreground="White"/>
+        <Label x:Name="Crypt24h"  Grid.Column="1" Grid.Row="1"  Padding="0" VerticalAlignment="Bottom" Margin="0 0 0 5" FontSize="12" Foreground="White"/>
 
     </Grid>
 </UserControl>
